@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding_lv" >
+
+    	<TextView 
+   	        android:id="@+id/txtSlNo"
+   	        android:layout_width="0dp"
+   	        android:layout_height="wrap_content"
+   	        android:gravity="center_horizontal"
+   	        android:textColor="#000"
+   	        android:layout_weight=".2"/>
+   	     <TextView 
+   	        android:id="@+id/txtDistrict"
+   	        android:layout_width="0dp"
+   	        android:layout_height="wrap_content"   	        
+   	        android:gravity="clip_horizontal"
+   	        android:layout_marginLeft="5dp"
+   	        android:textColor="#000"
+   	        android:layout_weight=".6"/>
+   	      <TextView 
+   	        android:id="@+id/txtPoint"
+   	        android:layout_width="0dp"
+   	        android:gravity="center_horizontal"
+   	        android:layout_height="wrap_content"
+   	        android:textColor="#000"
+   	        android:layout_weight=".2"/>
+</LinearLayout>

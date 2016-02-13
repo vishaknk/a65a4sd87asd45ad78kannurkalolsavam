@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#E3E7E2"
+    tools:context=".AboutActivity" >
+
+   <ImageView 
+       android:id="@+id/img"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:minHeight="100dp"
+       android:minWidth="100dp"
+       android:scaleType="fitXY"
+       android:layout_centerInParent="true"
+       android:src="@drawable/ic_launcher"/>
+   <TextView 
+       android:id="@+id/txtVersion"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_above="@+id/img"
+       android:text="@string/version"
+       android:textSize="15dp"
+       android:textColor="@android:color/black"
+       android:layout_marginBottom="10dp"/>
+   <TextView 
+       android:id="@+id/txtAppTitle"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_above="@+id/txtVersion"
+       android:text="@string/app_name"
+       android:textSize="30dp"
+       android:textColor="@android:color/black"
+       android:layout_marginBottom="5dp"/>
+   <TextView 
+       android:id="@+id/txtCompany"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_below="@+id/img"
+       android:textSize="20dp"
+       android:textColor="@android:color/black"
+       android:layout_marginTop="20dp"
+       android:text="All rights reserved"/>
+
+    </RelativeLayout>

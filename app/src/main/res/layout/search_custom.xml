@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"    
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/txtSlNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="3dp"
+        android:text="1"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/txtItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_below="@+id/txtP"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/txtSlNo"
+        android:text="item"
+        android:textColor="#6E6D6D" />
+
+    <TextView
+        android:id="@+id/txtClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtItem"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/txtSlNo"
+        android:text="class"
+        android:textColor="#6E6D6D" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtItem"
+        android:layout_alignTop="@+id/txtSlNo"
+        
+        android:text="Name"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"       
+        android:layout_marginRight="2dp"
+        android:layout_alignLeft="@+id/txtName"       
+        android:layout_below="@+id/txtName"
+        android:text="R"
+        android:textColor="#000"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtG"
+        android:layout_alignBottom="@+id/txtR"  
+        android:layout_toRightOf="@+id/txtG"
+         android:layout_below="@+id/txtName"
+        android:text="P"
+        android:textColor="#000"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+    
+      
+    <LinearLayout  android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtItem"
+        android:layout_toRightOf="@+id/txtClass" 
+        android:layout_marginLeft="10dp">
+
+    <TextView
+        android:id="@+id/txtSchool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:text="School"       
+        android:textColor="#6E6D6D" />
+  </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_toRightOf="@+id/txtR"
+         android:layout_alignBottom="@+id/txtR"
+        android:text="G"
+         android:layout_below="@+id/txtName"
+        android:textColor="#000"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

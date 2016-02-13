@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000</color>
+    <color name="blue">#00f</color>
+    <color name="red">#f00</color>
+    <color name="lightor">#F18604</color>
+    <color name="darkor">#BD6A06</color>
+    <color name="lightgr">#6EB354</color>
+    <color name="darkgr">#4C7A3B</color>
+    <color name="lightred">#E6352C</color>
+    <color name="darkred">#BF2C24</color>
+    <color name="lightblu">#35C4D4</color>
+    <color name="darkblu">#2895A1</color>
+    <color name="darkgray">#575C5A</color>
+    <color name="textcolor">#4e342e</color>
+    <color name="textcolorgold">#4caf50</color>
+    <color name="head"> #009688</color>
+    <color name="head_pressed"> #027167</color>
+    <color name="sub"> #80cbc4</color>
+    <color name="sub_pressed"> #5580cbc4</color>
+    <color name="head1"> #2196f3</color>
+    <color name="head1_pressed"> #1e83d3</color>
+    <color name="sub1"> #90caf9</color>
+    <color name="sub1_pressed"> #5590caf9</color>
+    <color name="head2"> #9c27b0</color>
+    <color name="sub2"> #ce93d8</color>
+    <color name="sub2_pressed"> #55ce93d8</color>
+    <color name="divider"> #c2c2c2</color>
+    <color name="btn_more">#757575</color>
+    <color name="btn_more_pressed"> #424242</color>
+    
+    <color name="hsgeneral">#ce93d8</color>
+    <color name="hsgeneral_pressed">#9c27b0</color>
+    
+    <color name="hssgeneral">#fdd835</color>
+    <color name="hssgeneral_pressed">#f9a825</color>
+    
+    <color name="hssanskrit">#9fa8da</color>
+    <color name="hssanskrit_pressed">#5c6bc0</color>
+    
+    
+    <color name="hsarabic">#26a69a</color>
+    <color name="hsarabic_pressed">#00796b</color>
+    
+    <color name="bg_leading_dist">#fff</color>
+    
+    <!-- ActionBar -->
+    <color name="colorPrimary">#0066ff</color>
+    <color name="colorPrimaryDark">#001433</color>
+
+</resources>

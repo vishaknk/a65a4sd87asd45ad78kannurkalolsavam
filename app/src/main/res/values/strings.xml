@@ -1,6 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kalolsavam</string>
 
+    <string name="app_name">Kalolsavam</string>
+    <string name="leading_districts">Leading districts</string>
+    <string name="sl_no">SL.NO</string>
+    <string name="district">DISTRICT</string>
+    <string name="point">POINT</string>
+    <string name="school">SCHOOL</string>
+    <string name="gold_title">LEADING SUB DISTRICT</string>
+    <string name="search_title">PARTICIPANT RESULT</string>
+    <string name="no_result">No Result!</string>
+    <string name="version">Version 1.2</string>
+    <string name="help_search">Here you can search the result of a participant using participant-id</string>
+    <string name="help_more">Click the more button to see the status of all the sub districts</string>
+    <string name="help_category">Click these buttons to see the detailed results</string>
+    <string name="loading_message">Loading...Please wait!</string>
+    <string name="Buffering">Buffering Video..</string>
+    <string name="title_activity_test_actovity">TestActovity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
 </resources>

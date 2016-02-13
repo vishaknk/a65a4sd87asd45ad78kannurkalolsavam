@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_size_table_heading">14sp</dimen>
+    <dimen name="item_divder">0.9dp</dimen>
+    <dimen name="item_title">30dp</dimen>
+    <dimen name="txt_item_title">15dp</dimen>
+    <dimen name="slider_hight">140dp</dimen>
+    <dimen name="padding_home">10dp</dimen>
+    <dimen name="padding_lv">10dp</dimen>
+    <dimen name="home_btn_height">110dp</dimen>
+    <dimen name="home_btn_image_height">80dp</dimen>
+    <dimen name="home_district_text_size">16dp</dimen>
+    <dimen name="home_btnmore">32dp</dimen>
+
+</resources>

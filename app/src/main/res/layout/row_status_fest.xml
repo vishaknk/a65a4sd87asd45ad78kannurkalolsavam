@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/status_fest_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_title"
+        android:layout_weight="1"
+        android:background="@color/head1"
+        android:gravity="center"
+        android:text="UP GENERAL"
+        android:textColor="#fffff2"
+        android:textSize="@dimen/txt_item_title"
+        android:typeface="serif" />
+
+    <LinearLayout
+        android:id="@+id/status_fest_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f4f4f4"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:padding="5dp"
+                android:text="Total items"
+                android:textSize="15dp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txt_item_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:padding="5dp"
+                android:text="0"
+                android:textSize="15dp"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:padding="5dp"
+                android:text="Completed items"
+                android:textSize="15dp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txt_item_completed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:padding="5dp"
+                android:text="0"
+                android:textSize="15dp"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:text="Items to be completed"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txt_item_to_complete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
