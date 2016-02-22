@@ -32,14 +32,13 @@
                     android:layout_marginTop="2dp"
                     android:minHeight="@dimen/slider_hight"
                     android:scaleType="fitXY"
-                    android:src="@drawable/pic1"
                     android:visibility="visible" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/scrollimage"
-                    android:background="#55000000"
+                    android:background="#4d000000"
                     android:gravity="center_horizontal"
                     android:padding="10dp"
                     android:text="LEADING DISTRICTS"
@@ -54,7 +53,6 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_gold_cup"
                     android:visibility="gone"/>
             </RelativeLayout>
 
@@ -203,13 +201,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#55000000"
+                android:background="#000000"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
                 android:text="Sections"
                 android:textSize="@dimen/home_district_text_size"
                 android:textStyle="bold"
-                android:visibility="visible"/>
+                android:visibility="visible"
+                android:textColor="#FFFFFF"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

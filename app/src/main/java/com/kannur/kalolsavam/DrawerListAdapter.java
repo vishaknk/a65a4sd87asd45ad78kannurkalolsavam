@@ -48,28 +48,44 @@ public class DrawerListAdapter extends BaseAdapter {
 		item.setText(items.get(pos));
 		switch (pos) {
 		case 0:
-			icon.setImageResource(R.drawable.ic_gold_cup);
+			icon.setImageResource(R.drawable.icon_stand);
+			item.setTextColor(context.getResources().getColor(R.color.orange));
 			break;
 		case 1:
-			icon.setImageResource(R.drawable.ic_program_chart);
+			icon.setImageResource(R.drawable.icon_venue);
+			item.setTextColor(context.getResources().getColor(R.color.violet));
 			break;
 		case 2:
-			icon.setImageResource(R.drawable.ic_venue_map);
+			icon.setImageResource(R.drawable.icon_shedule);
+			item.setTextColor(context.getResources().getColor(R.color.blues));
 			break;
 		case 3:
-			icon.setImageResource(R.drawable.ic_video);
+			icon.setImageResource(R.drawable.icon_college);
+			item.setTextColor(context.getResources().getColor(R.color.green));
 			break;
 		case 4:
-			icon.setImageResource(R.drawable.ic_links);
+			icon.setImageResource(R.drawable.icon_gallery);
+			item.setTextColor(context.getResources().getColor(R.color.redish));
 			break;
 		case 5:
-			icon.setImageResource(R.drawable.ic_history);
+			icon.setImageResource(R.drawable.icon_traintiming);
+			item.setTextColor(context.getResources().getColor(R.color.blues));
 			break;
 		case 6:
-			icon.setImageResource(R.drawable.ic_about);
+			icon.setImageResource(R.drawable.icon_follow);
+			item.setTextColor(context.getResources().getColor(R.color.orange));
 			break;
 		case 7:
-			icon.setImageResource(R.drawable.ic_exit);
+			icon.setImageResource(R.drawable.icon_about);
+			item.setTextColor(context.getResources().getColor(R.color.green));
+			break;
+		case 8:
+			icon.setImageResource(R.drawable.icon_locate);
+			item.setTextColor(context.getResources().getColor(R.color.bg_leading_dist));
+			break;
+		case 9:
+			icon.setImageResource(R.drawable.icon_close);
+			item.setTextColor(context.getResources().getColor(R.color.orange));
 			break;
 		default:
 			break;

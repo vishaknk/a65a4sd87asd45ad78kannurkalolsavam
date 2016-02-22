@@ -1,7 +1,7 @@
 package com.kannur.kalolsavam;
 
 public class Points {
-	int sl_no;
+	String sl_no;
 	String district;
 	String point;
 	String total;
@@ -10,7 +10,7 @@ public class Points {
 	String ara;
 	String san;
 	
-	public Points(int sl_no,String district,String point,String hs,String hss,String ara,String sans)
+	public Points(String sl_no,String district,String point,String hs,String hss,String ara,String sans)
 	{
 		this.sl_no = sl_no;
 		this.district = district;
@@ -20,7 +20,7 @@ public class Points {
 		this.ara=ara;
 		this.san=sans;
 	}
-	public Points(int sl_no,String district,String point)
+	public Points(String sl_no,String district,String point)
 	{
 		this.sl_no = sl_no;
 		this.district = district;

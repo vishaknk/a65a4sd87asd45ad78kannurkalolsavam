@@ -19,8 +19,7 @@
         android:layout_marginLeft="7dp"
         android:layout_marginTop="7dp"
         android:padding="5dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/icon" />
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/listItems"
@@ -30,7 +29,7 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/icon"
         android:textSize="18dp"
-        android:textColor="#000000"/>
+        android:textColor="#FFFFFF"/>
 
     <View
         android:id="@+id/bottom"

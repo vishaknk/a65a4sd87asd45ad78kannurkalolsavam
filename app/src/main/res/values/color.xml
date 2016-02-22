@@ -30,8 +30,8 @@
     <color name="btn_more">#757575</color>
     <color name="btn_more_pressed"> #424242</color>
     
-    <color name="hsgeneral">#ce93d8</color>
-    <color name="hsgeneral_pressed">#9c27b0</color>
+    <color name="hsgeneral">#000000</color>
+    <color name="hsgeneral_pressed">#333333</color>
     
     <color name="hssgeneral">#fdd835</color>
     <color name="hssgeneral_pressed">#f9a825</color>
@@ -46,7 +46,23 @@
     <color name="bg_leading_dist">#fff</color>
     
     <!-- ActionBar -->
-    <color name="colorPrimary">#0066ff</color>
-    <color name="colorPrimaryDark">#001433</color>
+    <color name="colorPrimary">#c42323</color>
+    <color name="colorPrimaryDark">#a31414</color>
+
+    <color name="orange">#f39b15</color>
+    <color name="violet">#9045ac</color>
+    <color name="blues">#5597c7</color>
+    <color name="green">#17a086</color>
+    <color name="redish">#ed4c3d</color>
+
+    <!-- outer background gray-->
+    <color name="bg_outer_grey">#F4F4F4</color>
+
+    <color name="bg_layout">#fdfaf5</color>
+
+    <color name="text_primary">#40220A</color>
+    <color name="text_secondary">#A44903</color>
+
+    <color name="tv_grey_color">#DBDBDB</color>
 
 </resources>

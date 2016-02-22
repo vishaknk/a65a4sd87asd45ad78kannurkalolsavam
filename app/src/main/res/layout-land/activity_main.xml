@@ -27,7 +27,6 @@
                 android:layout_marginTop="2dp"
                 android:minHeight="170dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/pic1"
                 android:visibility="gone" />
 
             <TextView
@@ -534,8 +533,7 @@
                         android:layout_width="100dp"
                         android:layout_height="25dp"
                         android:layout_weight=".4"
-                        android:gravity="right"
-                        android:src="@drawable/bannermain" />
+                        android:gravity="right" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -591,8 +589,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/lin3"
-                    android:layout_marginTop="3dp"
-                    android:src="@drawable/logos" />
+                    android:layout_marginTop="3dp"/>
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>

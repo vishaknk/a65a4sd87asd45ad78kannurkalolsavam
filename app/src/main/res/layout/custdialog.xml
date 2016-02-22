@@ -13,7 +13,6 @@
         android:textSize="16dp"
         
         android:layout_gravity="left"
-        android:drawableLeft="@drawable/icon"
         android:text="School Kalolsavam" android:textColor="#292828"/>
      <ImageView android:layout_width="fill_parent"
         android:layout_height="2dp" android:background="#152910"/>

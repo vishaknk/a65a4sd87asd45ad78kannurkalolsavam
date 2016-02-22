@@ -11,7 +11,7 @@ public class About extends ActionBarActivity {
 
 		super.onCreate(savedInstanceState);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		getSupportActionBar().setTitle("About");
+		getSupportActionBar().setTitle("About Us");
 		setContentView(R.layout.layout_about);
 
 	}

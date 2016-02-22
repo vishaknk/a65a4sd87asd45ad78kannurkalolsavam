@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <ScrollView
+        android:id="@+id/sv_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/scrollimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:minHeight="@dimen/slider_hight"
+                    android:scaleType="fitXY"
+                    android:visibility="visible"
+                    android:background="@drawable/committee_office"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/scrollimage"
+                    android:background="#4d000000"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="LEADING DISTRICTS"
+                    android:textSize="@dimen/home_district_text_size"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/more"
+                    android:layout_width="@dimen/home_btnmore"
+                    android:layout_height="@dimen/home_btnmore"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/leading_districts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/bg_leading_dist"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#e8f5e9" />
+
+                    <TextView
+                        android:id="@+id/leadscore2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="656"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/home_district_text_size"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/leaddist2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Trivandrum"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/home_district_text_size"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#c0c0c0" />
+                </LinearLayout>
+
+                <include layout="@layout/divider" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/bg_leading_dist"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="#e8f5e9" />
+
+                    <TextView
+                        android:id="@+id/leadscore1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="656"
+                        android:textColor="@color/textcolorgold"
+                        android:textSize="@dimen/home_district_text_size"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/leaddist1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Trivandrum"
+                        android:textColor="@color/textcolorgold"
+                        android:textSize="@dimen/home_district_text_size"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ffd700" />
+                </LinearLayout>
+
+                <include layout="@layout/divider" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/bg_leading_dist"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#e8f5e9" />
+
+                    <TextView
+                        android:id="@+id/leadscore3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="656"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/home_district_text_size"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/leaddist3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Trivandrum"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/home_district_text_size"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#5b391e" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/hsgeneral"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/bg_outer_grey">
+
+                <LinearLayout
+                    android:id="@+id/nirtham"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/btn_nritham">
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/icon_dance"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="25dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:text="നൃത്തോത്സവം "
+                        android:textSize="18sp"
+                        android:textColor="@color/bg_leading_dist"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sahitham"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/btn_sahitham">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/icon_lit"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="25dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:text="സാഹിത്യോത്സവം"
+                        android:textSize="18sp"
+                        android:textColor="@color/bg_leading_dist"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/music"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/btn_sangeetham">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/icon_music"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="25dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:textSize="18sp"
+                        android:text="സംഗീതോത്സവം "
+                        android:textColor="@color/bg_leading_dist"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/drama"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/btn_drishyam">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/icon_drama"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="25dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:text="ദൃശ്യ-നാടകോത്സവം "
+                        android:textSize="18sp"
+                        android:textColor="@color/bg_leading_dist"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/draw"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/btn_chithram">
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/icon_draw"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="25dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:text="ചിത്രോത്സവം"
+                        android:textSize="18sp"
+                        android:textColor="@color/bg_leading_dist"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/statuslin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainlin"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnstatus"
+                    android:layout_width="152dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_back"
+                    android:gravity="center"
+                    android:text="STATUS OF FEST"
+                    android:textColor="#fffff2"
+                    android:textSize="13dp"
+                    android:typeface="serif"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btnevent"
+                    android:layout_width="152dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttons_back"
+                    android:drawablePadding="1dp"
+                    android:gravity="center"
+                    android:text="NOW ON STAGE"
+                    android:textColor="#fffff2"
+                    android:textSize="13dp"
+                    android:typeface="serif"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

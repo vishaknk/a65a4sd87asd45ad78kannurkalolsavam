@@ -108,7 +108,7 @@ public class PointsSchool extends Fragment{
 								JSONArray ar = new JSONArray(result);
 								for (int i = 0; i < ar.length(); i++) {
 									JSONObject jo = ar.getJSONObject(i);
-									points.add(new Points(i + 1, jo
+									points.add(new Points("", jo
 											.getString("School"), jo
 											.getString("Point")));
 								}

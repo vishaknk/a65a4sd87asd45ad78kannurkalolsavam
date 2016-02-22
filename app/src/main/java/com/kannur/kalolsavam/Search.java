@@ -9,6 +9,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
@@ -38,11 +40,11 @@ public class Search extends ActionBarActivity {
 		setContentView(R.layout.search_main);
 		listView = (ListView) findViewById(R.id.listview);
 		id = getIntent().getStringExtra("id");
-		getSupportActionBar().setTitle("Search Result");
 		points = new ArrayList<Search_const>();
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		if (Utilities.isNetworkAvailable(Search.this)) {
-			loadData();
+//			loadData();
+			listView.setEmptyView(findViewById(android.R.id.empty));
 		} else {
 			Toast.makeText(Search.this,
 					"No Network Connection\n Try again later!",

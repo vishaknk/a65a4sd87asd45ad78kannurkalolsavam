@@ -20,4 +20,305 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
+  <string name="Cancel">Cancel</string>
+  <string name="gps_network_not_enabled">Gps is not enabled.</string>
+  <string name="open_location_settings">Enable</string>
+
+
+  <string-array name="itemcodes">
+  <item>Aksh</item>
+  <item>Bhrt</item>
+  <item>Chen</item>
+  <item>Chky</item>
+  <item>CmpD</item>
+  <item>Colg</item>
+  <item>Crcr</item>
+  <item>Crtn</item>
+  <item>DebE</item>
+  <item>DebM</item>
+  <item>Dfmt</item>
+  <item>DraC</item>
+  <item>DraE</item>
+  <item>DraH</item>
+  <item>DraK</item>
+  <item>DraM</item>
+  <item>DraP</item>
+  <item>Edak</item>
+  <item>EllA</item>
+  <item>EllE</item>
+  <item>EllH</item>
+  <item>EllK</item>
+  <item>EllM</item>
+  <item>EllS</item>
+  <item>EllU</item>
+  <item>Embr</item>
+  <item>EsWA</item>
+  <item>EsWE</item>
+  <item>EsWH</item>
+  <item>EsWK</item>
+  <item>EsWM</item>
+  <item>EsWS</item>
+  <item>EsWU</item>
+  <item>FiCE</item>
+  <item>FiCH</item>
+  <item>FiCM</item>
+  <item>FluI</item>
+  <item>GhaF</item>
+  <item>GhaM</item>
+  <item>Ghtm</item>
+  <item>GuiF</item>
+  <item>HrmI</item>
+  <item>HsaF</item>
+  <item>HsaM</item>
+  <item>JazF</item>
+  <item>Kcpd</item>
+  <item>KlPN</item>
+  <item>Kolk</item>
+  <item>KrlN</item>
+  <item>KsaF</item>
+  <item>KsaM</item>
+  <item>Ktkl</item>
+  <item>Ktpr</item>
+  <item>KvKl</item>
+  <item>LsaF</item>
+  <item>LsaM</item>
+  <item>Mdlm</item>
+  <item>Mime</item>
+  <item>Mmcr</item>
+  <item>Mohn</item>
+  <item>Mono</item>
+  <item>MplG</item>
+  <item>MplS</item>
+  <item>Mrdg</item>
+  <item>Mrgk</item>
+  <item>Nddg</item>
+  <item>NdnP</item>
+  <item>NdSF</item>
+  <item>NdSM</item>
+  <item>NgsI</item>
+  <item>Opna</item>
+  <item>PaEn</item>
+  <item>PaJa</item>
+  <item>Phto</item>
+  <item>Pklm</item>
+  <item>PoRA</item>
+  <item>PoRE</item>
+  <item>PoRH</item>
+  <item>PoRK</item>
+  <item>PoRM</item>
+  <item>PoRS</item>
+  <item>PoRU</item>
+  <item>PoWA</item>
+  <item>PoWE</item>
+  <item>PoWH</item>
+  <item>PoWK</item>
+  <item>PoWM</item>
+  <item>PoWS</item>
+  <item>PoWU</item>
+  <item>Prch</item>
+  <item>PsSI</item>
+  <item>Pstr</item>
+  <item>Purk</item>
+  <item>QUIZ</item>
+  <item>Rngl</item>
+  <item>SgaF</item>
+  <item>SgaI</item>
+  <item>SgnF</item>
+  <item>SgnM</item>
+  <item>Skit</item>
+  <item>SSWA</item>
+  <item>SSWE</item>
+  <item>SSWH</item>
+  <item>SSWK</item>
+  <item>SSWM</item>
+  <item>SSWS</item>
+  <item>SSWU</item>
+  <item>SWDE</item>
+  <item>SWDH</item>
+  <item>SWDM</item>
+  <item>SWME</item>
+  <item>SWMH</item>
+  <item>SWMM</item>
+  <item>Tbla</item>
+  <item>Thll</item>
+  <item>Thrv</item>
+  <item>Thvn</item>
+  <item>VenI</item>
+  <item>VioI</item>
+  <item>Yksh</item>
+</string-array>
+  
+  
+  <string-array name="itemNames">
+    <item>Aksharaslokam </item>
+    <item>Bharathanatyam </item>
+    <item>Chenda </item>
+    <item>Chaakyarkoothu </item>
+    <item>Computer Designing </item>
+    <item>Collage </item>
+    <item>Caricature Rachana </item>
+    <item>Cartoon Rachana </item>
+    <item>Debate English </item>
+    <item>Debate Malayalam </item>
+    <item>Duff muttukali </item>
+    <item>Charcoal Drawing </item>
+    <item>Naatakam English </item>
+    <item>Naatakam Hindi </item>
+    <item>Naatakam Kannada </item>
+    <item>Naatakam Malayalam </item>
+    <item>Pencil Drawing </item>
+    <item>Etakka </item>
+    <item>Prasangam Arabic </item>
+    <item>Prasangam English </item>
+    <item>Prasangam Hindi </item>
+    <item>Prasangam Kannada </item>
+    <item>Prasangam Malayalam </item>
+    <item>Prasangam Sanskrit </item>
+    <item>Prasangam Urdu </item>
+    <item>Embroidery </item>
+    <item>Prabandharachana Arabic </item>
+    <item>Prabandharachana English </item>
+    <item>Prabandharachana Hindi </item>
+    <item>Prabandharachana Kannada </item>
+    <item>Prabandharachana Malayalam </item>
+    <item>Prabandharachana Sanskrit </item>
+    <item>Prabandharachana Urdu </item>
+    <item>Cinema Niroopanam English </item>
+    <item>Cinema Niroopanam Hindi </item>
+    <item>Cinema Niroopanam Malayalam </item>
+    <item>Pullankuzhal - Pourasthyam </item>
+    <item>Ghazal - Female </item>
+    <item>Ghazal - Male </item>
+    <item>Ghattam </item>
+    <item>Guitar - Paschchathyam </item>
+    <item>Harmonium - Pourasthyam </item>
+    <item>Hindustani Sangeetham - Female </item>
+    <item>Hindustani Sangeetham - Male </item>
+    <item>Jazz - Pashchathyam </item>
+    <item>Kuchipudi </item>
+    <item>Kaliman Prathima Nirmaanam </item>
+    <item>Kolkali </item>
+    <item>Keralanatanam </item>
+    <item>Karnataka Sangeetham - Female </item>
+    <item>Karnataka Sangeetham - Male </item>
+    <item>Kathakali </item>
+    <item>Kathaprasangam </item>
+    <item>Kaavyakeli </item>
+    <item>Lalitha Sangeetham - Female </item>
+    <item>Lalitha Sangeetham - Male </item>
+    <item>Maddhalam </item>
+    <item>Mime </item>
+    <item>Mimicry </item>
+    <item>Mohiniyattam </item>
+    <item>Mono Act </item>
+    <item>Mappilappaattu - Group </item>
+    <item>Mappilappaattu - Single </item>
+    <item>Mrudangam </item>
+    <item>Maargamkali </item>
+    <item>Naatoti Nritham - Group </item>
+    <item>Naatanpattu </item>
+    <item>Naatoti Nritham - Single - Female </item>
+    <item>Naatoti Nritham - Single - Male </item>
+    <item>Naagaswaram - Pourasthyam </item>
+    <item>Oppana </item>
+    <item>Painting - Ennachayam </item>
+    <item>Painting - Jalachayam </item>
+    <item>Photography </item>
+    <item>Pookkalam </item>
+    <item>Kavithaalaapanam Arabic </item>
+    <item>Kavithaalaapanam English </item>
+    <item>Kavithaalaapanam Hindi </item>
+    <item>Kavithaalaapanam Kannada </item>
+    <item>Kavithaalaapanam Malayalam </item>
+    <item>Kavithaalaapanam Sanskrit </item>
+    <item>Kavithaalaapanam Urdu </item>
+    <item>Kavitharachana Arabic </item>
+    <item>Kavitharachana English </item>
+    <item>Kavitharachana Hindi </item>
+    <item>Kavitharachana Kannada </item>
+    <item>Kavitharachana Malayalam </item>
+    <item>Kavitharachana Sanskrit </item>
+    <item>Kavitharachana Urdu </item>
+    <item>Parichamuttukali </item>
+    <item>Pashchaathya Sangeetham - Single </item>
+    <item>Poster Rachana </item>
+    <item>Poorakkali </item>
+    <item>Quiz </item>
+    <item>Rangoli </item>
+    <item>Sanghagaanam - Pashchathyam </item>
+    <item>Sanghagaanam - Indian </item>
+    <item>Sanghanritham - Female </item>
+    <item>Sanghanritham - Male </item>
+    <item>Skit - Malayalam </item>
+    <item>Cherukatharachana Arabic </item>
+    <item>Cherukatharachana English </item>
+    <item>Cherukatharachana Hindi </item>
+    <item>Cherukatharachana Kannada </item>
+    <item>Cherukatharachana Malayalam </item>
+    <item>Cherukatharachana Sanskrit </item>
+    <item>Cherukatharachana Urdu </item>
+    <item>Thirakatharachana - Documentary English </item>
+    <item>Thirakatharachana - Documentary Hindi </item>
+    <item>Thirakatharachana - Documentary Malayalam </item>
+    <item>Thirakatharachana - Kathachithram English </item>
+    <item>Thirakatharachana - Kathachithram Hindi </item>
+    <item>Thirakatharachana - Kathachithram Malayalam </item>
+    <item>Tabala </item>
+    <item>Thullal </item>
+    <item>Thiruvaathirakali - Female </item>
+    <item>Theruvunaatakam Malayalam </item>
+    <item>Veena - Pourasthyam </item>
+    <item>Violin - Pourasthyam </item>
+    <item>Yakshagaanam </item>
+  </string-array>
+<!--
+    Student wise Sections
+    =====================-->
+  <string-array name="studentwise">
+  <item>MALE</item>
+  <item>FEMALE</item>
+  <item>SAHITHYAM</item>
+  <item>CHITHRAM</item>
+  <item>SANGEETHAM</item>
+  <item>NRITHAM</item>
+  <item>DRISHYAM</item>
+</string-array>
+  <string-array name="studentWisenames">
+  <item>Overall - Male</item>
+  <item>Overall - Female</item>
+  <item>Sahithyolsavam</item>
+  <item>Chithrolsavam</item>
+  <item>Sangeetholsavam</item>
+  <item>Nritholsavam</item>
+  <item>Drishya Nadakolsavam</item>
+  </string-array>
+<!--
+    College wise Sections
+    =====================-->
+  <string-array name="collegWiseCodes">
+  <item></item>
+  <item>SAHITHYAM</item>
+  <item>CHITHRAM</item>
+  <item>SANGEETHAM</item>
+  <item>NRITHAM</item>
+  <item>DRISHYAM</item>
+  <item>ON</item>
+  <item>OFF</item>
+  </string-array>
+
+  <string-array name="collegeWiseNames">
+   <item>Overall</item>
+   <item>Sahithyolsavam</item>
+   <item>Chithrolsavam</item>
+   <item>Sangeetholsavam</item>
+   <item>Nritholsavam</item>
+   <item>Drishya Nadakolsavam</item>
+   <item>On Stage</item>
+   <item>Off Stage</item>
+  </string-array>
 </resources>

@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,6 +20,7 @@ import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.MenuItemCompat;
@@ -30,19 +32,18 @@ import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.ViewConfiguration;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,7 +67,7 @@ public class MainActivity extends ActionBarActivity implements
 	private Button btnevent, btnstatus;
 	private ImageButton more;
 	private LinearLayout hsgen;
-	private LinearLayout hssgen, hssan, hsara, leading_districts;
+	private LinearLayout nritham, music, drama, draw, sahitham;
 	private TextView leaddist, leadscore, leaddist2, leaddist3, leadscore2,
 			leadscore3;
 	private ScrollView scrl;
@@ -96,7 +97,8 @@ public class MainActivity extends ActionBarActivity implements
 
 		mListView = (ListView) findViewById(R.id.drawerList);
 		titles = new String[] { "Standings",
-				"Venue","Shedules", "Follow Us","Gallery", "About Us", "Exit" };
+				"Venue","Results","Colleges","Gallery","Train Timings",  "Follow Us"
+				, "About Us","Locate Us", "Exit" };
 		mListView
 				.setAdapter(new DrawerListAdapter(this, Arrays.asList(titles)));
 		LayoutInflater inflater = getLayoutInflater();
@@ -105,7 +107,23 @@ public class MainActivity extends ActionBarActivity implements
 
 		mListView.addHeaderView(listHeaderView);
 		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-				R.string.app_name, R.string.app_name);
+				R.string.app_name, R.string.app_name){
+
+			public void onDrawerClosed(View view) {
+				// calling onPrepareOptionsMenu() to show action bar icons
+				invalidateOptionsMenu();
+			}
+
+			public void onDrawerOpened(View drawerView) {
+				// calling onPrepareOptionsMenu() to hide action bar icons
+				invalidateOptionsMenu();
+				if(getCurrentFocus()!=null) {
+					InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+					inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+				}
+			}
+
+		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 		mListView.setOnItemClickListener(mListener);
 
@@ -137,17 +155,17 @@ public class MainActivity extends ActionBarActivity implements
 		}
 
 		hand.postDelayed(runnableSlider, 1000);
-		hsgen.setOnClickListener(new OnClickListener() {
+		nritham.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (Utilities.isNetworkAvailable(MainActivity.this)) {
 
 					Intent genint = new Intent(MainActivity.this,
-							GeneralTab.class);
-					genint.putExtra("Check", "hsgeneral");
-					genint.putExtra("title", "-HS General");
+							CategoryResults.class);
+					genint.putExtra("category", "NRITHAM");
 					startActivity(genint);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 				} else {
 					Toast.makeText(MainActivity.this,
 							"Please check your internet connection",
@@ -156,17 +174,17 @@ public class MainActivity extends ActionBarActivity implements
 
 			}
 		});
-		hssgen.setOnClickListener(new OnClickListener() {
+		drama.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (Utilities.isNetworkAvailable(MainActivity.this)) {
 
 					Intent genint = new Intent(MainActivity.this,
-							GeneralTab.class);
-					genint.putExtra("Check", "hssgenera");
-					genint.putExtra("title", "-HSS General");
+							CategoryResults.class);
+					genint.putExtra("category", "DRISHYAM");
 					startActivity(genint);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 				} else {
 					Toast.makeText(MainActivity.this,
 							"Please check your internet connection",
@@ -175,35 +193,16 @@ public class MainActivity extends ActionBarActivity implements
 
 			}
 		});
-		hsara.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				if (Utilities.isNetworkAvailable(MainActivity.this)) {
-
-					Intent genint = new Intent(MainActivity.this,
-							GeneralTab.class);
-					genint.putExtra("Check", "hsarabic");
-					genint.putExtra("title", "-HS Arabic");
-					startActivity(genint);
-				} else {
-					Toast.makeText(MainActivity.this,
-							"Please check your internet connection",
-							Toast.LENGTH_SHORT).show();
-				}
-
-			}
-		});
-		hssan.setOnClickListener(new OnClickListener() {
+		music.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (Utilities.isNetworkAvailable(MainActivity.this)) {
 					Intent genint = new Intent(MainActivity.this,
-							GeneralTab.class);
-					genint.putExtra("Check", "hssan");
-					genint.putExtra("title", "-HS Sanskrit");
+							CategoryResults.class);
+					genint.putExtra("category", "SANGEETHAM");
 					startActivity(genint);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 				} else {
 					Toast.makeText(MainActivity.this,
 							"Please check your internet connection",
@@ -213,53 +212,43 @@ public class MainActivity extends ActionBarActivity implements
 			}
 		});
 
-		more.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				onClickleadingDistrict();
-			}
-		});
-		leading_districts.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				onClickleadingDistrict();
-			}
-		});
-
-		btnevent.setOnClickListener(new OnClickListener() {
+		draw.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (Utilities.isNetworkAvailable(MainActivity.this)) {
-					Intent webint = new Intent(MainActivity.this,
-							WebViewKalol.class);
-					webint.putExtra("url", Constants.staturl);
-					startActivity(webint);
+					Intent genint = new Intent(MainActivity.this,
+							CategoryResults.class);
+					genint.putExtra("category", "CHITHRAM");
+					startActivity(genint);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 				} else {
 					Toast.makeText(MainActivity.this,
 							"Please check your internet connection",
 							Toast.LENGTH_SHORT).show();
-				}
 
+				}
 			}
 		});
-		btnstatus.setOnClickListener(new OnClickListener() {
 
+		sahitham.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				if (Utilities.isNetworkAvailable(MainActivity.this)) {
-					Intent i = new Intent(MainActivity.this, StatusFest.class);
-					startActivity(i);
+					Intent genint = new Intent(MainActivity.this,
+							CategoryResults.class);
+					genint.putExtra("category", "SAHITHYAM");
+					startActivity(genint);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 				} else {
 					Toast.makeText(MainActivity.this,
 							"Please check your internet connection",
 							Toast.LENGTH_SHORT).show();
-				}
 
+				}
 			}
 		});
+
 	}
 
 	Runnable runnableSlider = new Runnable() {
@@ -273,11 +262,13 @@ public class MainActivity extends ActionBarActivity implements
 		@Override
 		public void run() {
 			if (Utilities.isNetworkAvailable(MainActivity.this)) {
-				loadScore();
+//				loadScore();
 			}
 
 		}
 	};
+
+
 
 	public void updateTimes() {
 
@@ -285,10 +276,10 @@ public class MainActivity extends ActionBarActivity implements
 		img.setImageBitmap(localBitmap2);
 		newpath = "pic" + i + ".jpg";
 		i++;
-		if (i > 7)
-			i = 1;
-		if (i > 7) {
-			i = 1;
+		if (i > 6)
+			i = 2;
+		if (i > 6) {
+			i = 2;
 			hand.postDelayed(runnableSlider, 4000);
 
 		} else {
@@ -330,6 +321,8 @@ public class MainActivity extends ActionBarActivity implements
 		mSearchView = (SearchView) MenuItemCompat.getActionView(searchItem);
 		mSearchView.setOnQueryTextListener(this);
 		mSearchView.setQueryHint("Participant Id");
+		EditText searchPlate = (EditText) mSearchView.findViewById(R.id.search_src_text);
+		searchPlate.setTextColor(getResources().getColor(R.color.bg_leading_dist));
 		MenuItemCompat.setOnActionExpandListener(searchItem,
 				new OnActionExpandListener() {
 
@@ -366,6 +359,7 @@ public class MainActivity extends ActionBarActivity implements
 			Intent ints = new Intent(MainActivity.this, Search.class);
 			ints.putExtra("id", s);
 			startActivity(ints);
+			overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 		} else {
 			Toast.makeText(MainActivity.this,
 					"Please check your internet connection", Toast.LENGTH_SHORT)
@@ -396,10 +390,11 @@ public class MainActivity extends ActionBarActivity implements
 		more = (ImageButton) findViewById(R.id.more);
 
 		hsgen = (LinearLayout) findViewById(R.id.hsgeneral);
-		hssgen = (LinearLayout) findViewById(R.id.hssgeneral);
-		hsara = (LinearLayout) findViewById(R.id.hsarabic);
-		hssan = (LinearLayout) findViewById(R.id.hssanskrit);
-		leading_districts = (LinearLayout) findViewById(R.id.leading_districts);
+		nritham = (LinearLayout) findViewById(R.id.nirtham);
+		drama = (LinearLayout) findViewById(R.id.drama);
+		music = (LinearLayout) findViewById(R.id.music);
+		draw = (LinearLayout) findViewById(R.id.draw);
+		sahitham = (LinearLayout) findViewById(R.id.sahitham);
 
 		btnevent = (Button) findViewById(R.id.btnevent);
 		btnstatus = (Button) findViewById(R.id.btnstatus);
@@ -472,7 +467,6 @@ public class MainActivity extends ActionBarActivity implements
 		al.setTitle(MainActivity.this.getResources().getString(
 				R.string.app_name));
 		al.setMessage("Sure to exit?");
-		al.setIcon(R.drawable.ic_launcher);
 		al.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
 			@Override
@@ -508,9 +502,7 @@ public class MainActivity extends ActionBarActivity implements
 		leadscore2.setText(points2 + "");
 		leaddist3.setText(dist3);
 		leadscore3.setText(points3 + "");
-		if (Utilities.isNetworkAvailable(MainActivity.this)) {
-			loadScore();
-		}
+
 	}
 
 	// save score to preference
@@ -549,78 +541,105 @@ public class MainActivity extends ActionBarActivity implements
 			// selectItem(position);
 			mDrawerLayout.closeDrawer(mListView);
 			switch (position) {
-			case 2:
-				if (Utilities.isNetworkAvailable(MainActivity.this)) {
-					Intent webint = new Intent(MainActivity.this,
-							WebViewKalol.class);
-					webint.putExtra("url", Constants.venue);
-					webint.putExtra("title", "Venue Map");
-					startActivity(webint);
-				} else {
-					Toast.makeText(MainActivity.this,
-							"Please check your internet connection",
-							Toast.LENGTH_SHORT).show();
-				}
-				break;
 
 			case 1:
 				if (Utilities.isNetworkAvailable(MainActivity.this)) {
 					Intent golds = new Intent(MainActivity.this,
-							LeadingDist.class);
-					golds.putExtra("Check", "gold");
+							StandingsActivity.class);
 					startActivity(golds);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 				} else {
 					Toast.makeText(MainActivity.this,
 							"Please check your internet connection",
 							Toast.LENGTH_SHORT).show();
 				}
 				break;
-			case 7:
-				exit();
-				break;
-			case 4:
-				if (Utilities.isNetworkAvailable(MainActivity.this)) {
-					Intent gold = new Intent(MainActivity.this, Links.class);
-					startActivity(gold);
-				} else {
-					Toast.makeText(MainActivity.this,
-							"Please check your internet connection",
-							Toast.LENGTH_SHORT).show();
-				}
-				break;
-			case 6:
-				Intent about = new Intent(MainActivity.this, About.class);
-				startActivity(about);
-				break;
-			case 5:
-				Intent gallery = new Intent(MainActivity.this, GalleryActivity.class);
-				startActivity(gallery);
-				break;
+				case 2:
+					if (Utilities.isNetworkAvailable(MainActivity.this)) {
+//						Intent webint = new Intent(MainActivity.this,
+//								WebViewKalol.class);
+//						webint.putExtra("url", Constants.venue);
+//						webint.putExtra("title", "Venue Map");
+//						startActivity(webint);
+//						overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+//						overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					} else {
+						Toast.makeText(MainActivity.this,
+								"Please check your internet connection",
+								Toast.LENGTH_SHORT).show();
+					}
+					break;
+				case 3:
+					Intent intent = new Intent(MainActivity.this,ResultActivity.class);
+					startActivity(intent);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
+				case 4:
+					Intent college = new Intent(MainActivity.this, ParticipatingCollege.class);
+					startActivity(college);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
+				case 5:
+					Intent train = new Intent(MainActivity.this, GalleryActivity.class);
+					startActivity(train);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
+				case 6:
+					Intent gallery = new Intent(MainActivity.this, TrainTimings.class);
+					startActivity(gallery);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
+				case 7:
+					if (Utilities.isNetworkAvailable(MainActivity.this)) {
+					/*Intent gold = new Intent(MainActivity.this, Links.class);
+					startActivity(gold);*/
+						Intent facebook = getOpenFacebookIntent(MainActivity.this);
+						startActivity(facebook);
+						overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					} else {
+						Toast.makeText(MainActivity.this,
+								"Please check your internet connection",
+								Toast.LENGTH_SHORT).show();
+						return;
+					}
 
-			case 3:
-				if (Utilities.isNetworkAvailable(MainActivity.this)) {
-					Intent webint = new Intent(MainActivity.this,
-							WebViewKalol.class);
-					webint.putExtra("url", Constants.program_chart);
-					webint.putExtra("title", "Program Chart");
-					startActivity(webint);
-				} else {
-					Toast.makeText(MainActivity.this,
-							"Please check your internet connection",
-							Toast.LENGTH_SHORT).show();
-				}
-				break;
+					break;
+				case 8:
+					Intent about = new Intent(MainActivity.this, About.class);
+					startActivity(about);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
+				case 9:
+					Intent locate = new Intent(MainActivity.this, LocateUsActivity.class);
+					startActivity(locate);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
 
+				case 10:
+					exit();
+				break;
 			default:
 				break;
 			}
 		}
 	};
 
+	public static Intent getOpenFacebookIntent(Context context) {
+
+		try {
+			context.getPackageManager()
+					.getPackageInfo("com.facebook.katana", 0); //Checks if FB is even installed.
+			return new Intent(Intent.ACTION_VIEW,
+					Uri.parse("fb://profile/254175194653125")); //Trys to make intent with FB's URI
+		} catch (Exception e) {
+			return new Intent(Intent.ACTION_VIEW,
+					Uri.parse("https://www.facebook.com/kannuruniversitykalotsavam2015kanhangad/")); //catches and opens a url to the desired page
+		}
+	}
 	private void onClickleadingDistrict() {
 		if (Utilities.isNetworkAvailable(MainActivity.this)) {
 
-			Intent golds = new Intent(MainActivity.this, LeadingDist.class);
+			Intent golds = new Intent(MainActivity.this, StandingsActivity.class);
 			golds.putExtra("Check", "gold");
 			startActivity(golds);
 		} else {
