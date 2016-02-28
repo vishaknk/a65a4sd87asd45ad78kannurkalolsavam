@@ -41,6 +41,7 @@ public class GalleryActivity extends AppCompatActivity{
         mImages = new ArrayList<>();
         mImages.add(R.drawable.committee_office);
         mImages.add(R.drawable.inuagral);
+        mImages.add(R.drawable.logo_inau);
         mAdapter = new galleryAdapter(this,R.id.lv_gallery,mImages);
         mList.setAdapter(mAdapter);
     }

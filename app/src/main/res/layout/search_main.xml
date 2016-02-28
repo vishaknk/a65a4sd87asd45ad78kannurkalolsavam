@@ -1,15 +1,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#E3E7E2"
+    android:background="@color/bg_layout"
     android:orientation="vertical" >
 
-    <ListView
-        android:id="@+id/listview"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@null" >
-    </ListView>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/tv_name"
+        android:ellipsize="end"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/text_primary"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/tv_college_name"
+        android:ellipsize="end"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/redish"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_spinners"
+        android:background="@color/bg_layout">
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:clickable="false"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:divider="@android:color/holo_orange_light"
+            android:cacheColorHint="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/bg_layout"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@android:id/empty"

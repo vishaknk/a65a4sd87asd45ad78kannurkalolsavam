@@ -54,8 +54,8 @@ public class SearchAdapter extends BaseAdapter {
 		holder.txtSlNo.setText("" + points.get(position).participant_id);
 		holder.txtname.setText(points.get(position).participant_name);
 		holder.txtclas.setText("Class-" + points.get(position).classs);
-		holder.txtsname.setText("" + points.get(position).school_name);
-		System.out.println("School " + points.get(position).school_name);
+		holder.txtsname.setText("" + points.get(position).college_name);
+		System.out.println("School " + points.get(position).college_name);
 		holder.txtiname.setText("" + points.get(position).item_name);
 		ranks = points.get(position).rank;
 		grade = points.get(position).grade;
@@ -69,9 +69,9 @@ public class SearchAdapter extends BaseAdapter {
 		if (point.equals("") || ranks == null) {
 			point = "?";
 		}
-		holder.txtrank.setText("R-" + ranks);
-		holder.txtgrade.setText("  G-" + grade);
-		holder.txtpoint.setText("  P-" + point);
+		holder.txtrank.setText( ranks);
+		holder.txtgrade.setText( grade);
+		holder.txtpoint.setText( point);
 		if (position % 2 != 0)
 			holder.layout.setBackgroundResource(R.drawable.bg_even);
 		else {

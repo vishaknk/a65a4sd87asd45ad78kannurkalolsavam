@@ -52,12 +52,12 @@ public class DrawerListAdapter extends BaseAdapter {
 			item.setTextColor(context.getResources().getColor(R.color.orange));
 			break;
 		case 1:
-			icon.setImageResource(R.drawable.icon_venue);
-			item.setTextColor(context.getResources().getColor(R.color.violet));
-			break;
-		case 2:
 			icon.setImageResource(R.drawable.icon_shedule);
 			item.setTextColor(context.getResources().getColor(R.color.blues));
+			break;
+		case 2:
+			icon.setImageResource(R.drawable.icon_result);
+			item.setTextColor(context.getResources().getColor(R.color.bg_leading_dist));
 			break;
 		case 3:
 			icon.setImageResource(R.drawable.icon_college);

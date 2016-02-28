@@ -10,59 +10,61 @@
     <application
             android:name=".app.AppController"
             android:allowBackup="true"
-            android:icon="@drawable/logo"
+            android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
             android:theme="@style/Kalolsavam" >
             <activity
                 android:name=".MainActivity"
                 android:label="@string/app_name"
                 android:screenOrientation="portrait">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
 
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
                 <meta-data
                     android:name="android.app.default_searchable"
                     android:value=".Search"
                     android:screenOrientation="portrait"/>
             </activity>
-            <activity android:name=".WebViewKalol"
+            <activity android:name=".SplashScreenActivty"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+        <activity android:name=".ParticipatingCollege"
                 android:screenOrientation="portrait">
             </activity>
-            <activity android:name=".ParticipatingCollege"
+        <activity android:name=".StandingsActivity"
                 android:screenOrientation="portrait">
             </activity>
-            <activity android:name=".GeneralTab"
-                android:screenOrientation="portrait">
-            </activity>
-            <activity android:name=".StandingsActivity"
-                android:screenOrientation="portrait">
-            </activity>
+        <activity android:name=".ExcelActivity"
+            android:screenOrientation="portrait">
+        </activity>
             <activity android:name=".Search"
                 android:screenOrientation="portrait">
             </activity>
-            <activity android:name=".Links"
+        <activity android:name=".About"
                 android:screenOrientation="portrait">
             </activity>
-            <activity android:name=".History"
-                android:screenOrientation="portrait">
-            </activity>
-            <activity android:name=".About"
-                android:screenOrientation="portrait">
-            </activity>
-            <activity android:name=".StatusFest"
-                android:screenOrientation="portrait">
-            </activity>
-            <activity android:name=".PlayActivity"
-                android:screenOrientation="portrait">
-            </activity>
-            <activity android:name=".GalleryActivity"
+        <activity android:name=".ShedulePrograms"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ItemShedule"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".GalleryActivity"
                 android:screenOrientation="portrait">
             </activity>
     <activity android:name=".ResultActivity"
         android:screenOrientation="portrait">
     </activity>
+        <activity android:name=".ResultEvents"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ItemsByIndividualLeader"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".CategoryResults"
             android:screenOrientation="portrait">
         </activity>

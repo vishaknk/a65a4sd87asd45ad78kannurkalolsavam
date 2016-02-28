@@ -9,15 +9,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.android.volley.toolbox.ImageLoader;
+import com.bumptech.glide.Glide;
+import com.kannur.kalolsavam.app.AppController;
 
 import java.util.ArrayList;
 
 /**
- * Created by Priyesh on 20-02-2016.
+ * Created by Priyesh on 27-02-2016.
  */
-public class ResultActivity extends AppCompatActivity {
+public class ShedulePrograms extends AppCompatActivity {
     private ArrayList<String>sections;
     private LayoutInflater mInflater;
     private PrayerSetAdapater mAdapter;
@@ -26,14 +31,16 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Results");
+        getSupportActionBar().setTitle("Shedules");
         setContentView(R.layout.result_sections);
         mListView = (ListView) findViewById(R.id.lv_sections);
-        mInflater = LayoutInflater.from(ResultActivity.this);
+        mInflater = LayoutInflater.from(ShedulePrograms.this);
         sections = new ArrayList<>();
-        sections.add("Item Results");
-        sections.add("Individual LeaderBoard");
-        sections.add("College LeaderBoard");
+        sections.add("Day 1 (28-02-2016)");
+        sections.add("Day 2 (29-02-2016)");
+        sections.add("Day 3 (01-03-2016)");
+        sections.add("Day 4 (02-03-2016)");
+        sections.add("Day 5 (03-03-2016)");
         mAdapter = new PrayerSetAdapater(this,R.id.lv_sections,sections);
         mListView.setAdapter(mAdapter);
     }
@@ -77,23 +84,9 @@ public class ResultActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-
-                    if(position == 0) {
-                        Intent intent = new Intent(ResultActivity.this,ResultEvents.class);
-                        intent.putExtra("items", "1");
-                        startActivity(intent);
-                    }
-                    else if(position ==1) {
-                        Intent intent = new Intent(ResultActivity.this,ItemsByIndividualLeader.class);
-                        intent.putExtra("items", "2");
-                        startActivity(intent);
-                    }
-                    else {
-                        Intent intent = new Intent(ResultActivity.this,ItemRsultActivity.class);
-                        intent.putExtra("items", "3");
-                        startActivity(intent);
-                    }
-
+                    Intent intent = new Intent(ShedulePrograms.this,ItemShedule.class);
+                    intent.putExtra("items",position);
+                    startActivity(intent);
                     overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
                 }
             });
@@ -115,4 +108,5 @@ public class ResultActivity extends AppCompatActivity {
         }
 
     }
+
 }

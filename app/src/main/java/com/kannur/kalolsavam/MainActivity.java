@@ -53,7 +53,6 @@ import com.android.volley.Request.Method;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.google.analytics.tracking.android.EasyTracker;
 import com.kannur.kalolsavam.app.AppController;
 import com.kannur.kalolsavam.app.Constants;
 import com.kannur.kalolsavam.app.Utilities;
@@ -64,15 +63,8 @@ public class MainActivity extends ActionBarActivity implements
 	private ImageView img;
 	private String newpath = "pic1.jpg";
 	private int i = 2;
-	private Button btnevent, btnstatus;
-	private ImageButton more;
-	private LinearLayout hsgen;
 	private LinearLayout nritham, music, drama, draw, sahitham;
-	private TextView leaddist, leadscore, leaddist2, leaddist3, leadscore2,
-			leadscore3;
 	private ScrollView scrl;
-	private String dist1, dist2, dist3;
-	private int points1, points2, points3;
 	private Handler hand = new Handler();
 	private Handler hands = new Handler();
 
@@ -97,7 +89,7 @@ public class MainActivity extends ActionBarActivity implements
 
 		mListView = (ListView) findViewById(R.id.drawerList);
 		titles = new String[] { "Standings",
-				"Venue","Results","Colleges","Gallery","Train Timings",  "Follow Us"
+				"Schedule","Results","Colleges","Gallery","Train Timings",  "Follow Us"
 				, "About Us","Locate Us", "Exit" };
 		mListView
 				.setAdapter(new DrawerListAdapter(this, Arrays.asList(titles)));
@@ -141,7 +133,6 @@ public class MainActivity extends ActionBarActivity implements
 				scrl.smoothScrollTo(0, 100);
 			}
 		}, 300);*/
-		setScore();
 		try {
 			ViewConfiguration config = ViewConfiguration.get(MainActivity.this);
 			Field menuKeyField = ViewConfiguration.class
@@ -380,24 +371,11 @@ public class MainActivity extends ActionBarActivity implements
 
 	public void initialise() {
 		img = (ImageView) findViewById(R.id.scrollimage);
-		leaddist = (TextView) findViewById(R.id.leaddist1);
-
-		leadscore = (TextView) findViewById(R.id.leadscore1);
-		leaddist2 = (TextView) findViewById(R.id.leaddist2);
-		leadscore2 = (TextView) findViewById(R.id.leadscore2);
-		leaddist3 = (TextView) findViewById(R.id.leaddist3);
-		leadscore3 = (TextView) findViewById(R.id.leadscore3);
-		more = (ImageButton) findViewById(R.id.more);
-
-		hsgen = (LinearLayout) findViewById(R.id.hsgeneral);
 		nritham = (LinearLayout) findViewById(R.id.nirtham);
 		drama = (LinearLayout) findViewById(R.id.drama);
 		music = (LinearLayout) findViewById(R.id.music);
 		draw = (LinearLayout) findViewById(R.id.draw);
 		sahitham = (LinearLayout) findViewById(R.id.sahitham);
-
-		btnevent = (Button) findViewById(R.id.btnevent);
-		btnstatus = (Button) findViewById(R.id.btnstatus);
 
 	}
 
@@ -415,30 +393,7 @@ public class MainActivity extends ActionBarActivity implements
 					@Override
 					public void onResponse(String response) {
 						if (response != null) {
-							String d1, d2, d3;
-							int s1, s2, s3;
-							try {
-								JSONArray result = new JSONArray(response);
-								JSONObject jo = result.getJSONObject(0);
-								d1 = jo.getString("District");
-								s1 = Integer.parseInt(jo.getString("Point"));
-								leaddist.setText(d1);
-								leadscore.setText(jo.getString("Point"));
-								JSONObject jo1 = result.getJSONObject(1);
-								d2 = jo1.getString("District");
-								s2 = Integer.parseInt(jo1.getString("Point"));
-								leaddist2.setText(d2);
-								leadscore2.setText(jo1.getString("Point"));
-								JSONObject jo2 = result.getJSONObject(2);
-								d3 = jo2.getString("District");
-								s3 = Integer.parseInt(jo2.getString("Point"));
-								leaddist3.setText(d3);
-								leadscore3.setText(jo2.getString("Point"));
 
-								setScore(d1, s1, d2, s2, d3, s3);
-							} catch (JSONException e) {
-							} catch (Exception e) {
-							}
 						}
 						hands.postDelayed(runnableLoadScore, REFRESH_INTERVAL);
 
@@ -488,50 +443,6 @@ public class MainActivity extends ActionBarActivity implements
 		dg.show();
 	}
 
-	// set score to the home screen
-	public void setScore() {
-		points1 = prefs.getInt("Point1", 0);
-		dist1 = prefs.getString("District1", "No Result");
-		points2 = prefs.getInt("Point2", 0);
-		dist2 = prefs.getString("District2", "No Result");
-		points3 = prefs.getInt("Point3", 0);
-		dist3 = prefs.getString("District3", "No Result");
-		leaddist.setText(dist1);
-		leadscore.setText(points1 + "");
-		leaddist2.setText(dist2);
-		leadscore2.setText(points2 + "");
-		leaddist3.setText(dist3);
-		leadscore3.setText(points3 + "");
-
-	}
-
-	// save score to preference
-	public void setScore(String distname1, int score1, String distname2,
-			int score2, String distname3, int score3) {
-		// load preferences
-		Editor edit = prefs.edit();
-		edit.putInt("Point1", score1);
-		edit.putString("District1", distname1);
-		edit.putInt("Point2", score2);
-		edit.putString("District2", distname2);
-		edit.putInt("Point3", score3);
-		edit.putString("District3", distname3);
-		edit.commit();
-	}
-
-	@Override
-	public void onStart() {
-		super.onStart();
-
-		EasyTracker.getInstance(this).activityStart(this);
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-
-		EasyTracker.getInstance(this).activityStop(this);
-	}
 
 	OnItemClickListener mListener = new OnItemClickListener() {
 
@@ -545,7 +456,8 @@ public class MainActivity extends ActionBarActivity implements
 			case 1:
 				if (Utilities.isNetworkAvailable(MainActivity.this)) {
 					Intent golds = new Intent(MainActivity.this,
-							StandingsActivity.class);
+							CategoryResults.class);
+					golds.putExtra("category", "");
 					startActivity(golds);
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 				} else {
@@ -555,19 +467,9 @@ public class MainActivity extends ActionBarActivity implements
 				}
 				break;
 				case 2:
-					if (Utilities.isNetworkAvailable(MainActivity.this)) {
-//						Intent webint = new Intent(MainActivity.this,
-//								WebViewKalol.class);
-//						webint.putExtra("url", Constants.venue);
-//						webint.putExtra("title", "Venue Map");
-//						startActivity(webint);
-//						overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-//						overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-					} else {
-						Toast.makeText(MainActivity.this,
-								"Please check your internet connection",
-								Toast.LENGTH_SHORT).show();
-					}
+					Intent intents = new Intent(MainActivity.this,ShedulePrograms.class);
+					startActivity(intents);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
 				case 3:
 					Intent intent = new Intent(MainActivity.this,ResultActivity.class);
@@ -575,7 +477,7 @@ public class MainActivity extends ActionBarActivity implements
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
 				case 4:
-					Intent college = new Intent(MainActivity.this, ParticipatingCollege.class);
+					Intent college = new Intent(MainActivity.this, ExcelActivity.class);
 					startActivity(college);
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
@@ -591,8 +493,6 @@ public class MainActivity extends ActionBarActivity implements
 					break;
 				case 7:
 					if (Utilities.isNetworkAvailable(MainActivity.this)) {
-					/*Intent gold = new Intent(MainActivity.this, Links.class);
-					startActivity(gold);*/
 						Intent facebook = getOpenFacebookIntent(MainActivity.this);
 						startActivity(facebook);
 						overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);

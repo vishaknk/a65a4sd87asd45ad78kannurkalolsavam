@@ -27,7 +27,6 @@ import com.kannur.kalolsavam.app.Utilities;
 
 public class StandingsActivity extends ActionBarActivity{
 	private ListView listView;
-	private ArrayList<Points> points;
 	private CustomAdapter adapter;
 	private final String tag = "tag_req_gold";
 
@@ -39,8 +38,6 @@ public class StandingsActivity extends ActionBarActivity{
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		setContentView(R.layout.activity_standings);
 		listView = (ListView) findViewById(R.id.listview);
-		new ArrayList<Points>();
-		points = new ArrayList<Points>();
 		listView.setEmptyView(findViewById(android.R.id.empty));
 		if (Utilities.isNetworkAvailable(StandingsActivity.this)) {
 			loadData();
@@ -82,14 +79,8 @@ public class StandingsActivity extends ActionBarActivity{
 								JSONArray feedArray = object.getJSONArray("data");
 								for (int i = 0; i < feedArray.length(); i++) {
 									JSONObject jo = feedArray.getJSONObject(i);
-									points.add(new Points(jo.getString("rank"), jo
-											.getString("college_name"), jo
-											.getString("points")));
 
 								}
-								points.size();
-								adapter = new CustomAdapter(StandingsActivity.this,
-										points);
 								listView.setAdapter(adapter);
 
 							} catch (JSONException e) {
@@ -119,12 +110,6 @@ public class StandingsActivity extends ActionBarActivity{
 								Toast.LENGTH_SHORT).show();
 					}
 				}) {
-			@Override
-			protected Map<String, String> getParams() throws AuthFailureError {
-				Map<String, String> params = new HashMap<String, String>();
-				params.put("type", "gold");
-				return params;
-			}
 		};
 		AppController.getInstance().addToRequestQueue(req, tag);
 	}

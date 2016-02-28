@@ -9,45 +9,58 @@
     android:background="#E3E7E2"
     tools:context=".AboutActivity" >
 
-   <ImageView 
-       android:id="@+id/img"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:minHeight="100dp"
-       android:minWidth="100dp"
-       android:scaleType="fitXY"
-       android:layout_centerInParent="true"
-       android:src="@drawable/logo"/>
-   <TextView 
-       android:id="@+id/txtVersion"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_centerHorizontal="true"
-       android:layout_above="@+id/img"
-       android:textSize="15dp"
-       android:textColor="@android:color/black"
-       android:layout_marginBottom="10dp"
-       android:visibility="gone"/>
-   <TextView 
-       android:id="@+id/txtAppTitle"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_centerHorizontal="true"
-       android:layout_above="@+id/txtVersion"
-       android:text="@string/app_name"
-       android:textSize="20sp"
-       android:textColor="@color/redish"
-       android:layout_marginBottom="5dp"/>
-   <TextView 
-       android:id="@+id/txtCompany"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_centerHorizontal="true"
-       android:layout_below="@+id/img"
-       android:textSize="14sp"
-       android:textColor="@color/hsgeneral_pressed"
-       android:layout_marginTop="20dp"
-       android:gravity="center"
-       android:text="\u00A9 2016 Students Union, Kannur University. \nAll rights reserved."/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:id="@+id/txtAppTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/txtVersion"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="@color/redish"
+            android:layout_marginBottom="5dp"/>
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo"/>
+        <TextView
+            android:id="@+id/txtVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/img"
+            android:textSize="15dp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/txtCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img"
+            android:textSize="14sp"
+            android:textColor="@color/hsgeneral_pressed"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="\u00A9 2016 Students Union, Kannur University. \nAll rights reserved."/>
+
+    </LinearLayout>
+
+
 
     </RelativeLayout>

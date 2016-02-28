@@ -4,7 +4,7 @@ public class Search_const {
 	String participant_id;
 	String participant_name;
 	String classs;
-	String school_name;
+	String college_name;
 	String item_name;
 	String rank;
 	String grade;
@@ -14,7 +14,7 @@ public class Search_const {
 		this.participant_id = id;
 		this.participant_name = name;
 		this.classs = clas;
-		this.school_name=sname;
+		this.college_name=sname;
 		this.item_name=iname;
 		this.rank=ranks;
 		this.grade=grades;
