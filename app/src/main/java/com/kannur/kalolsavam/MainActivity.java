@@ -88,16 +88,17 @@ public class MainActivity extends ActionBarActivity implements
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 
 		mListView = (ListView) findViewById(R.id.drawerList);
+		LayoutInflater inflater = getLayoutInflater();
+		View listHeaderView = inflater.inflate(R.layout.header_list,null, false);
+
+		mListView.addHeaderView(listHeaderView);
 		titles = new String[] { "Standings",
 				"Schedule","Results","Colleges","Gallery","Train Timings",  "Follow Us"
 				, "About Us","Locate Us", "Exit" };
 		mListView
 				.setAdapter(new DrawerListAdapter(this, Arrays.asList(titles)));
-		LayoutInflater inflater = getLayoutInflater();
 
-		View listHeaderView = inflater.inflate(R.layout.header_list,null, false);
 
-		mListView.addHeaderView(listHeaderView);
 		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
 				R.string.app_name, R.string.app_name){
 
