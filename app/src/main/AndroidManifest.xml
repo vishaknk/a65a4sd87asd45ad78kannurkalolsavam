@@ -5,6 +5,7 @@
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
 
     <application
@@ -76,13 +77,21 @@
         <activity android:name=".TrainTimings"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity android:name=".VenueActivity">
+        </activity>
         <activity android:name=".LocateUsActivity"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity android:name=".QRCodeReader"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".QRData" android:screenOrientation="portrait"></activity>
             <!-- Goolge Maps API Key -->
             <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
-                android:value="AIzaSyDepElhZeNxg_IbPJrsa8fW35-NkO7jb4s" />
+                android:value="AIzaSyD9lutT8ptgAEyJUhHrZY43pG_uxk9IzgA" />
 
         </application>
     </manifest>

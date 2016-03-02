@@ -93,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements
 
 		mListView.addHeaderView(listHeaderView);
 		titles = new String[] { "Standings",
-				"Schedule","Results","Colleges","Gallery","Train Timings",  "Follow Us"
+				"Schedule","Results","Colleges","Venue", "Gallery","Train Timings","QR code",  "Follow Us"
 				, "About Us","Locate Us", "Exit" };
 		mListView
 				.setAdapter(new DrawerListAdapter(this, Arrays.asList(titles)));
@@ -482,17 +482,29 @@ public class MainActivity extends ActionBarActivity implements
 					startActivity(college);
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
+
 				case 5:
+					Intent venue = new Intent(MainActivity.this, VenueActivity.class);
+					startActivity(venue);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
+
+				case 6:
 					Intent train = new Intent(MainActivity.this, GalleryActivity.class);
 					startActivity(train);
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
-				case 6:
+				case 7:
 					Intent gallery = new Intent(MainActivity.this, TrainTimings.class);
 					startActivity(gallery);
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
-				case 7:
+				case 8:
+					Intent about = new Intent(MainActivity.this, QRCodeReader.class);
+					startActivity(about);
+					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+					break;
+				case 9:
 					if (Utilities.isNetworkAvailable(MainActivity.this)) {
 						Intent facebook = getOpenFacebookIntent(MainActivity.this);
 						startActivity(facebook);
@@ -505,18 +517,18 @@ public class MainActivity extends ActionBarActivity implements
 					}
 
 					break;
-				case 8:
-					Intent about = new Intent(MainActivity.this, About.class);
-					startActivity(about);
+				case 10:
+					Intent abouts = new Intent(MainActivity.this, About.class);
+					startActivity(abouts);
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
-				case 9:
+				case 11:
 					Intent locate = new Intent(MainActivity.this, LocateUsActivity.class);
 					startActivity(locate);
 					overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 					break;
 
-				case 10:
+				case 12:
 					exit();
 				break;
 			default:
