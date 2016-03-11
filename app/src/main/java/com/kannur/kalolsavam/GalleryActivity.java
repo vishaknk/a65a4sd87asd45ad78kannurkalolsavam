@@ -11,14 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.bumptech.glide.Glide;
 import com.kannur.kalolsavam.app.AppController;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by iTraveller on 2/13/2016.
@@ -39,9 +37,12 @@ public class GalleryActivity extends AppCompatActivity{
         mList= (ListView) findViewById(R.id.lv_gallery);
         mInflater = LayoutInflater.from(this);
         mImages = new ArrayList<>();
-        mImages.add(R.drawable.committee_office);
-        mImages.add(R.drawable.inuagral);
-        mImages.add(R.drawable.logo_inau);
+        mImages.add(R.drawable.img_0922);
+        mImages.add(R.drawable.img_0917);
+        mImages.add(R.drawable.img_0918);
+        mImages.add(R.drawable.img_0920);
+        mImages.add(R.drawable.img_0921);
+        mImages.add(R.drawable.img_0923);
         mAdapter = new galleryAdapter(this,R.id.lv_gallery,mImages);
         mList.setAdapter(mAdapter);
     }
@@ -83,14 +84,22 @@ public class GalleryActivity extends AppCompatActivity{
             if (mLoader == null) {
                 mLoader = AppController.getInstance().getImageLoader();
             }
-            Glide.with(GalleryActivity.this).load(images.get(position)).into(holder.image);
+            try {
+                Glide.with(GalleryActivity.this).load(images.get(position)).into(holder.image);
+            }catch (Exception e){
+
+            }
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent = new Intent(GalleryActivity.this, ImgaeViewMain.class);
+                    intent.putExtra("image",mImages.get(position));
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
                 }
             });
+
             return view;
         }
         @Override

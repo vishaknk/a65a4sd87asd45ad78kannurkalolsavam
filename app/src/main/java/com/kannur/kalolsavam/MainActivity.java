@@ -268,9 +268,9 @@ public class MainActivity extends ActionBarActivity implements
 		img.setImageBitmap(localBitmap2);
 		newpath = "pic" + i + ".jpg";
 		i++;
-		if (i > 6)
+		if (i > 7)
 			i = 2;
-		if (i > 6) {
+		if (i > 7) {
 			i = 2;
 			hand.postDelayed(runnableSlider, 4000);
 

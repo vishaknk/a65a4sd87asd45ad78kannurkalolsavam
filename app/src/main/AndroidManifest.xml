@@ -36,6 +36,10 @@
         <activity android:name=".ParticipatingCollege"
                 android:screenOrientation="portrait">
             </activity>
+
+        <activity android:name=".ImgaeViewMain"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".StandingsActivity"
                 android:screenOrientation="portrait">
             </activity>
